@@ -15,8 +15,10 @@ var (
 )
 
 func cleaninput(input string) string {
-	r := strings.NewReplacer("&", "^&")
-	return r.Replace(input)
+	r1 := strings.NewReplacer("&", "^&")
+	r1.Replace(input)
+	r2 := strings.NewReplacer("/", "\\")
+	return r2.Replace(input)
 }
 
 func open(input string) *exec.Cmd {
